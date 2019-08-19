@@ -1,0 +1,31 @@
+//－－－－－－－－－－ 自定义滚动条样式 start－－－－－－－－
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  //滚动条轨道
+  background-color: rgba(248, 248, 248, 1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  //滚动条里面的滑块
+  background-color: rgba(232, 232, 232, 1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  //滚动条里面的滑块
+  background-color: rgba(217, 217, 217, 1);
+}
+//－－－－－－－－－－ 自定义滚动条样式 end－－－－－－－－－－
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
