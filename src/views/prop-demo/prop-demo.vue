@@ -5,12 +5,12 @@
     <p>父组件的array：{{data_array}}</p>
     <p>父组件的object：{{data_object}}</p>
     <p>父组件的boolean：{{data_boolean}}</p>
-    <hr>
+    <el-divider></el-divider>
     <childe :data-number="data_number"
     :data-string="data_string"
     :data-array="data_array"
     :data-object="data_object"></childe>
-    <hr>
+    <el-divider></el-divider>
     v-model:<model v-model="data_boolean"></model>
   </div>
 </template>
@@ -33,6 +33,6 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss" scoped>
 
 </style>

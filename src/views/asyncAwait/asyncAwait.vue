@@ -6,7 +6,7 @@
     <p>num2：{{num2}}</p>
     <p>num3：{{num3}}</p>
     <p>num4：{{num4}}</p>
-    <hr />
+    <el-divider></el-divider>
     <p style="color:green;">{{count}}</p>
   </div>
 </template>
@@ -69,5 +69,5 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 </style>

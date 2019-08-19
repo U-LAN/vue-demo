@@ -89,7 +89,6 @@ export default {
       }
     }
     p {
-      color: #666;
       .code-name{
         display: inline-block;
         width: 100px;

@@ -50,10 +50,10 @@ export default {
 <style lang="scss" scoped>
 #main {
   width: 100%;
-  height: 944px;
+  height: 100%;
   background-color: #f0f5ff;
   .el-header {
-    background-color: #597ef7;
+    background-color: rgba(89,126,231,1);
     color: #fff;
     box-shadow: 0 0 5px 5px rgba(3,8,82,.2);
     h1 {

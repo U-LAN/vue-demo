@@ -155,11 +155,8 @@ export default {
 </script>
 <style scoped>
 .mycharts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
 }
 .chart {
   width: 100%;

@@ -34,7 +34,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .color-range {
-  color: #666;
   display: flex;
   align-items: center;
   span{

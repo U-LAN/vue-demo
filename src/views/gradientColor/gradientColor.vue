@@ -168,5 +168,8 @@ export default {
   .el-divider{
     clear: both;
   }
+  b{
+    font-weight: 400;
+  }
 }
 </style>
