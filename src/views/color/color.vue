@@ -99,7 +99,7 @@ export default {
         margin: 5px 20px;
         padding: 5px 20px;
         font-weight: bold;
-        box-shadow: 0 0 2px 2px rgba(3, 8, 82, 0.2);
+        box-shadow: 0 0 2px 2px rgba(3, 8, 82, 0.1);
         background-color: #ffffff;
         color: #597ef7;
       }

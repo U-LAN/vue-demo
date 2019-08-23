@@ -35,7 +35,8 @@ export default {
         { name: 'prop-demo', cname: 'prop-demo' },
         { name: 'gradientColor', cname: '颜色渐变' },
         { name: 'asyncAwait', cname: 'async&await' },
-        { name: 'echarts', cname: 'Echarts' }
+        { name: 'echarts', cname: 'Echarts' },
+        { name: 'd3', cname: 'D3' }
       ]
     }
   },
