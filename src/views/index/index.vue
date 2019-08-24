@@ -10,7 +10,7 @@
         <el-tabs tab-position="left" v-model="activeName" @tab-click="tabClick">
           <el-tab-pane
             :name="item.name"
-            :label="'Demo-'+index+'-'+item.cname"
+            :label="item.cname"
             v-for="(item,index) in navlist"
             v-bind:key="index"
           ></el-tab-pane>
@@ -36,7 +36,8 @@ export default {
         { name: 'gradientColor', cname: '颜色渐变' },
         { name: 'asyncAwait', cname: 'async&await' },
         { name: 'echarts', cname: 'Echarts' },
-        { name: 'd3', cname: 'D3' }
+        { name: 'd3', cname: 'D3' },
+        { name: 'git', cname: 'Git' }
       ]
     }
   },
@@ -67,7 +68,8 @@ export default {
   .el-aside {
     .el-tabs {
       /deep/ .el-tabs__header {
-        padding: 20px 0;
+        padding: 20px;
+        float: none;
       }
     }
   }

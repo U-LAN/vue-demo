@@ -9,6 +9,7 @@ import GradientColor from '@/views/gradientColor/gradientColor'
 import Async from '@/views/asyncAwait/asyncAwait'
 import Echarts from '@/views/echarts/echarts'
 import D3 from '@/views/d3/d3'
+import Git from '@/views/gitCommand/gitCommand'
 
 Vue.use(Router)
 
@@ -54,6 +55,11 @@ export default new Router({
           path: '/d3',
           name: 'd3',
           component: D3
+        },
+        {
+          path: '/git',
+          name: 'git',
+          component: Git
         }
       ]
     }

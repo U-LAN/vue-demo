@@ -1,30 +1,29 @@
 <template>
-  <div class="main"></div>
+  <div class="d3"></div>
 </template>
 <script>
 import * as d3 from "d3";
 export default {
   mounted() {
-    this.$nextTick(() => {
-      this.initD3();
-    });
+    // this.$nextTick(() => {
+    this.initD3();
+    // });
   },
   methods: {
     initD3() {
-      var width = 500,
-        height = 500;
+      var width = 800,
+        height = 700;
 
       var i = 0;
 
       var svg = d3
-        .select(".main")
+        .select(".d3")
         .append("svg")
         .attr("width", width)
         .attr("height", height);
 
       svg
         .append("rect")
-        .attr('class','box')
         .attr("width", width)
         .attr("height", height)
         .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
@@ -32,7 +31,7 @@ export default {
       function particle() {
         var m = d3.mouse(this);
         svg
-          .insert("circle", ".box")
+          .insert("circle", "rect")
           .attr("cx", m[0])
           .attr("cy", m[1])
           .attr("r", 1e-6)
@@ -51,20 +50,20 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-.main {
-  width: 500px;
-  height: 500px;
-  background: #555;
+<style >
+.d3 {
+  width: 800px;
+  height: 700px;
+  background: #222;
+  box-shadow: 0 0 5px 5px rgba(3, 8, 82, 0.1);
+}
+rect {
+  fill: none;
+  pointer-events: all;
+}
 
-  rect {
-    fill: none;
-    pointer-events: all;
-  }
-
-  circle {
-    fill: none;
-    stroke-width: 2.5px;
-  }
+circle {
+  fill: none;
+  stroke-width: 2.5px;
 }
 </style>
