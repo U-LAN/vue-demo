@@ -1,0 +1,80 @@
+[
+  {
+    "name": "dataexa_image_1asdasdasdasdasdasds",
+    "tag": "最新",
+    "dockerType": "CPU版",
+    "cuda": "-",
+    "cudnn": "-",
+    "system": "CentOS7.0",
+    "language": "Java JDK8",
+    "mirror": "Spark（2.3.4）",
+    "time": "2019-08-06 14:23:30"
+  },
+  {
+    "name": "dataexa_image_1",
+    "tag": "最新",
+    "dockerType": "CPU版",
+    "cuda": "-",
+    "cudnn": "-",
+    "system": "CentOS7.0",
+    "language": "Java JDK8",
+    "mirror": "Spark（2.3.4）",
+    "time": "2019-08-06 14:23:30"
+  },
+  {
+    "name": "dataexa_image_1",
+    "tag": "最新",
+    "dockerType": "CPU版",
+    "cuda": "-",
+    "cudnn": "-",
+    "system": "CentOS7.0",
+    "language": "Java JDK8",
+    "mirror": "Spark（2.3.4）",
+    "time": "2019-08-06 14:23:30"
+  },
+  {
+    "name": "dataexa_image_1",
+    "tag": "最新",
+    "dockerType": "CPU版",
+    "cuda": "-",
+    "cudnn": "-",
+    "system": "CentOS7.0",
+    "language": "Java JDK8",
+    "mirror": "Spark（2.3.4）",
+    "time": "2019-08-06 14:23:30"
+  },
+  {
+    "name": "dataexa_image_1",
+    "tag": "最新",
+    "dockerType": "CPU版",
+    "cuda": "-",
+    "cudnn": "-",
+    "system": "CentOS7.0",
+    "language": "Java JDK8",
+    "mirror": "Spark（2.3.4）",
+    "time": "2019-08-06 14:23:30"
+  },
+  {
+    "name": "dataexa_image_1",
+    "tag": "最新",
+    "dockerType": "CPU版",
+    "cuda": "-",
+    "cudnn": "-",
+    "system": "CentOS7.0",
+    "language": "Java JDK8",
+    "mirror": "Spark（2.3.4）",
+    "time": "2019-08-06 14:23:30"
+  },
+  {
+    "name": "dataexa_image_1",
+    "tag": "最新",
+    "dockerType": "CPU版",
+    "cuda": "-",
+    "cudnn": "-",
+    "system": "CentOS7.0",
+    "language": "Java JDK8",
+    "mirror": "Spark（2.3.4）",
+    "time": "2019-08-06 14:23:30"
+  }
+  
+]

@@ -25,28 +25,29 @@
 
 <script>
 export default {
-  name: 'Index',
-  data () {
+  name: "Index",
+  data() {
     return {
       activeName: this.$route.name,
       navlist: [
-        { name: 'color', cname: '调色板' },
-        { name: 'shop', cname: '购物车' },
-        { name: 'prop-demo', cname: 'prop-demo' },
-        { name: 'gradientColor', cname: '颜色渐变' },
-        { name: 'asyncAwait', cname: 'async&await' },
-        { name: 'echarts', cname: 'Echarts' },
-        { name: 'd3', cname: 'D3' },
-        { name: 'git', cname: 'Git' }
+        { name: "color", cname: "调色板" },
+        { name: "shop", cname: "购物车" },
+        { name: "prop-demo", cname: "prop-demo" },
+        { name: "gradientColor", cname: "颜色渐变" },
+        { name: "asyncAwait", cname: "async&await" },
+        { name: "echarts", cname: "Echarts" },
+        { name: "d3", cname: "D3" },
+        { name: "git", cname: "Git" },
+        { name: "d2-table", cname: "d2-table" }
       ]
-    }
+    };
   },
   methods: {
-    tabClick (tab) {
-      this.$router.push(tab.name)
+    tabClick(tab) {
+      this.$router.push(tab.name);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -55,9 +56,9 @@ export default {
   height: 100%;
   background-color: #f0f5ff;
   .el-header {
-    background-color: rgba(89,126,231,1);
+    background-color: rgba(89, 126, 231, 1);
     color: #fff;
-    box-shadow: 0 0 5px 5px rgba(3,8,82,.2);
+    box-shadow: 0 0 5px 5px rgba(3, 8, 82, 0.2);
     h1 {
       text-align: center;
       a {
@@ -73,10 +74,9 @@ export default {
       }
     }
   }
-  .el-main{
+  .el-main {
     height: 870px;
     overflow: auto;
   }
 }
-
 </style>

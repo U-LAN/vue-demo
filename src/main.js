@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import D2Curd from '@d2-projects/d2-crud'
 
 Vue.use(ElementUI)
+Vue.use(D2Curd)
 
 Vue.config.productionTip = false
 

@@ -56,6 +56,7 @@ export default {
         });
 
         e.clearSelection();
+        clipboard.destroy();
       });
 
       clipboard.on("error", e => {
