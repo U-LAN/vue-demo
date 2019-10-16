@@ -1,38 +1,6 @@
 <template>
   <div class="shop">
     <div class="shop-main">
-      <!-- <table width="80%" border="1" cellspacing="1" cellpadding="4" align="center">
-        <tr bgcolor="#cccccc">
-          <td>序号</td>
-          <td>名称</td>
-          <td>价格(元/千克)</td>
-          <td>数量</td>
-        </tr>
-        <tr v-for="(item,index) in shops" v-bind:key="index">
-          <td>{{index}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.price}}</td>
-          <td>
-            <input
-              type="button"
-              v-bind:disabled="item.count === 0"
-              v-on:click="item.count-=1"
-              value="-"
-            />
-            &nbsp;{{item.count}}&nbsp;
-            <input
-              v-on:click="item.count++"
-              type="button"
-              value="+"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>总计(元)：</td>
-          <td colspan="3" style="color:red;">{{total}}</td>
-        </tr>
-      </table>-->
-
       <el-table :data="shops" style="width: 100%" :summary-method="getSummaries" show-summary>
         <el-table-column type="index" width="50"></el-table-column>
         <el-table-column prop="name" label="名称" width="180"></el-table-column>

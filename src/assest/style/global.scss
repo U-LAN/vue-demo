@@ -1,27 +1,5 @@
-//－－－－－－－－－－ 自定义滚动条样式 start－－－－－－－－
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  //滚动条轨道
-  background-color: rgba(248, 248, 248, 1);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb {
-  //滚动条里面的滑块
-  background-color: rgba(232, 232, 232, 1);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb:hover {
-  //滚动条里面的滑块
-  background-color: rgba(217, 217, 217, 1);
-}
-//－－－－－－－－－－ 自定义滚动条样式 end－－－－－－－－－－
-html,body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -31,3 +9,82 @@ html,body {
   -moz-osx-font-smoothing: grayscale;
   color: #666666;
 }
+
+//－－－－－－－－－－ 自定义滚动条样式 start－－－－－－－－
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  //滚动条轨道
+  background-color: rgba(248, 248, 248, 1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  //滚动条里面的滑块
+  background-color: rgba(232, 232, 232, 1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  //滚动条里面的滑块
+  background-color: rgba(217, 217, 217, 1);
+}
+
+//－－－－－－－－－－ 自定义滚动条样式 end－－－－－－－－－－
+
+//－－－－－－－－－－ 滑动动画 start－－－－－－－－－－
+.animation {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .move {
+    position: absolute;
+    left: -10px;
+    display: inline-block;
+    height: 100%;
+    width: 100px;
+    border-radius: 0 18px 18px 0;
+    background-image: linear-gradient(to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.1));
+    animation: movee 5s linear infinite;
+    -webkit-animation: movee 5s linear infinite;
+    /* Safari 与 Chrome */
+  }
+}
+
+@keyframes movee {
+  from {
+    left: -100px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes movee
+
+/* Safari and Chrome */
+  {
+  from {
+    left: -100px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+//－－－－－－－－－－ 滑动动画 end－－－－－－－－－－

@@ -11,6 +11,8 @@ import Echarts from '@/views/echarts/echarts'
 import D3 from '@/views/d3/d3'
 import Git from '@/views/gitCommand/gitCommand'
 import D2Table from '@/views/d2-table/d2-table'
+import CustomComponent from '@/views/custom-component/index'
+import Es6 from '@/views/es6/index'
 
 Vue.use(Router)
 
@@ -66,6 +68,16 @@ export default new Router({
           path: '/d2-table',
           name: 'd2-table',
           component: D2Table
+        },
+        {
+          path: '/custom-component',
+          name: 'custom-component',
+          component:CustomComponent
+        },
+        {
+          path: '/es6',
+          name: 'es6',
+          component:Es6
         }
       ]
     }
