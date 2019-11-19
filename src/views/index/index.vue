@@ -23,14 +23,6 @@
         </ul>
       </div>
     </el-container>
-    <div class="ccc">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-    </div>
   </el-container>
 </template>
 
@@ -142,15 +134,6 @@ export default {
   to {
     left: 100%;
     top: 100%;
-  }
-}
-.ccc {
-  div {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #000;
-    display: inline-block;
-    margin: auto;
   }
 }
 </style>
