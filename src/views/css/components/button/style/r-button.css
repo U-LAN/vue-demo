@@ -1,0 +1,39 @@
+
+/*
+
+The component will reset button browser styles
+
+*/
+
+.r-button{
+  --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
+  --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
+
+  --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
+  --uirButtonBorderStyle: var(--rButtonBorderStyle, solid);
+  --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
+
+  --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
+  --uirButtonFontSize: var(--rButtonFontSize,  inherit);
+  --uirButtonColor: var(--rButtonColor);
+
+  background-color: var(--uirButtonBackgroundColor) !important;
+  padding: var(--uirButtonPadding) !important;
+
+  border-width: var(--uirButtonBorderWidth) !important;
+  border-style: var(--uirButtonBorderStyle) !important;
+  border-color: var(--uirButtonBorderColor) !important;
+
+  font-family: var(--uirButtonFontFamily) !important;
+  font-size: var(--uirButtonFontSize) !important;
+}
+
+/* Remove the inner border and padding in Firefox. */
+
+.r-button::-moz-focus-inner,
+.r-button[type="button"]::-moz-focus-inner,
+.r-button[type="reset"]::-moz-focus-inner,
+.r-button[type="submit"]::-moz-focus-inner {
+  --rButtonBorderStyle: none;
+  --rButtonPadding: 0;
+}

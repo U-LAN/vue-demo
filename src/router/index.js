@@ -13,6 +13,7 @@ import Git from '@/views/gitCommand/gitCommand'
 import D2Table from '@/views/d2-table/d2-table'
 import CustomComponent from '@/views/custom-component/index'
 import Es6 from '@/views/es6/index'
+import Css from "@/views/css/index"
 
 Vue.use(Router)
 
@@ -79,6 +80,11 @@ export default new Router({
           path: '/es6',
           name: 'es6',
           component: Es6
+        },
+        {
+          path: '/css',
+          name: 'css',
+          component: Css
         }
       ]
     }
