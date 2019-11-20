@@ -1,5 +1,6 @@
 <template>
   <el-container id="main">
+    <stars></stars>
     <el-header>
       <h1><a href="https://cn.vuejs.org/">VUE</a> DEMO COLLECTION</h1>
     </el-header>
@@ -15,21 +16,22 @@
         </el-tabs>
       </el-aside>
       <el-main>
-        <router-view></router-view>
+        <keep-alive >
+          <router-view></router-view>
+        </keep-alive>
       </el-main>
-      <div class="shadow">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
     </el-container>
   </el-container>
 </template>
 
 <script>
 import { navlist } from "../../assest/dateJs/index/index";
+import Stars from "./components/stars";
 export default {
   name: "Index",
+  components: {
+    Stars
+  },
   data() {
     return {
       activeName: this.$route.name,
@@ -74,66 +76,6 @@ export default {
   }
   .all {
     position: relative;
-    .shadow {
-      pointer-events: none;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      z-index: 99;
-      ul {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        overflow: hidden;
-        li {
-          list-style: none;
-          position: absolute;
-          left: -10px;
-          width: 200px;
-          height: 4px;
-          border-radius: 2px;
-          background-image: linear-gradient(
-            to right,
-            rgba(255, 255, 222, 0),
-            rgba(255, 255, 222, 1)
-          );
-          transform: rotate(45deg);
-          -ms-transform: rotate(45deg); /* IE 9 */
-          -webkit-transform: rotate(45deg); /* Safari and Chrome */
-          animation: movee 5s linear infinite;
-          -webkit-animation: movee 5s linear infinite;
-        }
-      }
-    }
-  }
-}
-
-@keyframes movee {
-  from {
-    left: -100px;
-    top: -100px;
-  }
-
-  to {
-    left: 100%;
-    top: 100%;
-  }
-}
-
-@-webkit-keyframes movee
-
-/* Safari and Chrome */ {
-  from {
-    left: -100px;
-    top: -100px;
-  }
-
-  to {
-    left: 100%;
-    top: 100%;
   }
 }
 </style>

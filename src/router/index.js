@@ -17,6 +17,7 @@ import Es6 from '@/views/es6/index'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -72,12 +73,12 @@ export default new Router({
         {
           path: '/custom-component',
           name: 'custom-component',
-          component:CustomComponent
+          component: CustomComponent
         },
         {
           path: '/es6',
           name: 'es6',
-          component:Es6
+          component: Es6
         }
       ]
     }
