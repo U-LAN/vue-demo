@@ -6,15 +6,20 @@
     <el-card>
       <tail-recursion></tail-recursion>
     </el-card>
+    <el-card>
+      <proxy-reflect></proxy-reflect>
+    </el-card>
   </div>
 </template>
 <script>
 import SymbolType from "./components/symbol";
 import TailRecursion from "./components/tail-recursion";
+import ProxyReflect from "./components/proxy-reflect";
 export default {
   components: {
     SymbolType,
-    TailRecursion
+    TailRecursion,
+    ProxyReflect
   }
 };
 </script>
@@ -25,5 +30,6 @@ export default {
   overflow: auto;
   display: inline-block;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 </style>

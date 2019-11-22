@@ -13,7 +13,6 @@ export default {
   methods: {
     createStar() {
       var stars = document.getElementById("stars");
-      console.dir(stars);
       // js随机生成流星
       for (var j = 0; j < 10; j++) {
         var newStar = document.createElement("div");
@@ -48,7 +47,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 99;
   // background: rgba(0, 0, 0, 0.5);
 }
 .star {

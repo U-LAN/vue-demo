@@ -103,61 +103,56 @@
 <script>
 export default {
   mounted() {
-    this.aaa();
-  },
-  methods: {
-    aaa() {
-      function test() {
-        function trampoline(f) {
-          while (f && f instanceof Function) {
-            f = f();
-          }
-          return f;
+    function test() {
+      function trampoline(f) {
+        while (f && f instanceof Function) {
+          f = f();
         }
-
-        function sum(x, y) {
-          if (y > 0) {
-            return sum.bind(null, x + 1, y - 1);
-          } else {
-            return x;
-          }
-        }
-
-        console.log(trampoline(sum(1, 100000)));
+        return f;
       }
 
-      test();
+      function sum(x, y) {
+        if (y > 0) {
+          return sum.bind(null, x + 1, y - 1);
+        } else {
+          return x;
+        }
+      }
 
-      //尾递归优化
-      // function tco(f) {
-      //   var value;
-      //   var active = false;
-      //   var accumulated = [];
-
-      //   return function accumulator() {
-      //     accumulated.push(arguments);
-      //     if (!active) {
-      //       active = true;
-      //       while (accumulated.length) {
-      //         value = f.apply(this, accumulated.shift());
-      //       }
-      //       active = false;
-      //       return value;
-      //     }
-      //   };
-      // }
-
-      // var sum = tco(function(x, y) {
-      //   console.log(x, y);
-      //   if (y > 0) {
-      //     return sum(x + 1, y - 1);
-      //   } else {
-      //     return x;
-      //   }
-      // });
-
-      // console.log(sum(1, 100000));
+      console.log(trampoline(sum(1, 100000)));
     }
+
+    // test();
+
+    //尾递归优化
+    // function tco(f) {
+    //   var value;
+    //   var active = false;
+    //   var accumulated = [];
+
+    //   return function accumulator() {
+    //     accumulated.push(arguments);
+    //     if (!active) {
+    //       active = true;
+    //       while (accumulated.length) {
+    //         value = f.apply(this, accumulated.shift());
+    //       }
+    //       active = false;
+    //       return value;
+    //     }
+    //   };
+    // }
+
+    // var sum = tco(function(x, y) {
+    //   console.log(x, y);
+    //   if (y > 0) {
+    //     return sum(x + 1, y - 1);
+    //   } else {
+    //     return x;
+    //   }
+    // });
+
+    // console.log(sum(1, 100000));
   }
 };
 </script>
