@@ -149,6 +149,24 @@ export default {
     observe(printAge);
 
     // person.name = "李四";
+
+    function checkout(params) {
+    
+      if (arguments.length) {
+        let type = Object.prototype.toString.call(params).slice(8, -1);
+        switch (type) {
+          case Number:
+            type = isNaN(params)
+              ? "NaN"
+              : !isFinite(params)
+              ? "Infinity"
+              : type;
+            break;
+        }
+      } else {
+        return "请输入要验证的参数！";
+      }
+    }
   }
 };
 </script>
