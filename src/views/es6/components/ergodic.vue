@@ -73,6 +73,21 @@
       2.不同用于forEach方法，它可以与break、continue和return配合使用。
       3.提供了遍历所有数据结构的统一操作接口。
     </pre>
+    <el-divider></el-divider>
+    <h4>forEach</h4>
+    <pre>
+      const arr = ['red', 'green', 'blue'];
+      arr.forEach(function(item,index,arr){
+        console.log(item)
+      })
+
+      //简写为：arr.forEach(console.log)
+      
+      ------------------------------------------------
+      
+      forEach()和map()类似，它也把每个元素依次作用于传入的函数，但不会返回新的数组。
+      forEach()常用于遍历数组，因此，传入的函数不需要返回值
+    </pre>
   </div>
 </template>
 <script>
@@ -89,5 +104,6 @@ export default {};
   text-align: center;
   color: #fff;
   border-radius: 18px;
+  z-index: 2;
 }
 </style>

@@ -181,5 +181,6 @@ export default {
   text-align: center;
   color: #fff;
   border-radius: 18px;
+  z-index: 2;
 }
 </style>
