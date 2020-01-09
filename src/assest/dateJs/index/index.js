@@ -10,7 +10,8 @@ const navlist = [
   { name: "d2-table", cname: "d2-table" },
   { name: "custom-component", cname: "封装组件" },
   { name: "es6", cname: "ES6" },
-  { name: "css", cname: "Css" }
+  { name: "css", cname: "Css" },
+  { name: "antv-g6", cname: "Antv/g6" }
 
 ];
 

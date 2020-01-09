@@ -14,6 +14,7 @@ import D2Table from '@/views/d2-table/d2-table'
 import CustomComponent from '@/views/custom-component/index'
 import Es6 from '@/views/es6/index'
 import Css from "@/views/css/index"
+import AntvG6 from '@/views/antv-g6/index'
 
 Vue.use(Router)
 
@@ -85,6 +86,10 @@ export default new Router({
           path: '/css',
           name: 'css',
           component: Css
+        }, {
+          path: 'antv-g6',
+          name: 'antv-g6',
+          component: AntvG6
         }
       ]
     }
