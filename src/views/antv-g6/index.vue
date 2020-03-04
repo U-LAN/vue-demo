@@ -2,34 +2,34 @@
   <div id="mountNode"></div>
 </template>
 <script>
-import G6 from "@antv/g6";
+import G6 from '@antv/g6'
 export default {
-  mounted() {
+  mounted () {
     const data = {
       nodes: [
         {
-          id: "node1",
-          label: "node1",
+          id: 'node1',
+          label: 'node1',
           x: 100,
           y: 200,
           // 该节点可选的连接点集合，该点有两个可选的连接点
           anchorPoints: [[0, 1], [0.5, 1]],
-          shape: "rect"
+          shape: 'rect'
         },
         {
-          id: "node2",
-          label: "node2",
+          id: 'node2',
+          label: 'node2',
           x: 300,
           y: 400,
           // 该节点可选的连接点集合，该点有两个可选的连接点
           anchorPoints: [[0.5, 0], [1, 0.5]],
-          shape: "rect"
+          shape: 'rect'
         }
       ],
       edges: [
         {
-          source: "node1",
-          target: "node2",
+          source: 'node1',
+          target: 'node2',
           // 该边连入 source 点的第 0 个 anchorPoint，
           sourceAnchor: 0,
           // 该边连入 target 点的第 0 个 anchorPoint，
@@ -39,8 +39,8 @@ export default {
           }
         },
         {
-          source: "node2",
-          target: "node1",
+          source: 'node2',
+          target: 'node1',
           // 该边连入 source 点的第 1 个 anchorPoint，
           sourceAnchor: 1,
           // 该边连入 source 点的第 1 个 anchorPoint，
@@ -50,7 +50,7 @@ export default {
           }
         }
       ]
-    };
+    }
 
     // G6.registerEdge("hvh", {
     //   draw(cfg, group) {
@@ -72,17 +72,17 @@ export default {
     // });
 
     const graph = new G6.Graph({
-      container: "mountNode",
-      width: 1500,
+      container: 'mountNode',
+      width: 800,
       height: 500,
       defaultNode: {
-        shape: "rect",
+        shape: 'rect',
         style: {
           opacity: 0.1
         }
       },
       modes: {
-        default: ["drag-node"]
+        default: ['drag-node']
       },
       defaultEdge: {
         // ... 其他属性
@@ -93,11 +93,11 @@ export default {
         }
       },
       linkCenter: true // 使边连入节点的中心
-    });
-    graph.data(data);
-    graph.render();
+    })
+    graph.data(data)
+    graph.render()
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 </style>
