@@ -2,7 +2,9 @@
   <el-container id="main">
     <stars></stars>
     <el-header>
-      <h1><a href="https://cn.vuejs.org/">VUE</a> DEMO COLLECTION</h1>
+      <h1>
+        <a href="https://cn.vuejs.org/">VUE</a> DEMO COLLECTION
+      </h1>
     </el-header>
     <el-container class="all">
       <el-aside width="200px" height="100%">
@@ -12,11 +14,16 @@
             :label="item.cname"
             v-for="(item, index) in navlist"
             v-bind:key="index"
-          ></el-tab-pane>
+          >
+            <span slot="label">
+              {{item.cname}}
+              <i :class="['iconfont',item.icon||'']"></i>
+            </span>
+          </el-tab-pane>
         </el-tabs>
       </el-aside>
       <el-main>
-        <keep-alive >
+        <keep-alive>
           <router-view></router-view>
         </keep-alive>
       </el-main>
@@ -25,25 +32,25 @@
 </template>
 
 <script>
-import { navlist } from "../../assest/dateJs/index/index";
-import Stars from "./components/stars";
+import { navlist } from '../../assest/dateJs/index/index'
+import Stars from './components/stars'
 export default {
-  name: "Index",
+  name: 'Index',
   components: {
     Stars
   },
-  data() {
+  data () {
     return {
       activeName: this.$route.name,
       navlist: navlist
-    };
+    }
   },
   methods: {
-    tabClick(tab) {
-      this.$router.push(tab.name);
+    tabClick (tab) {
+      this.$router.push(tab.name)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -67,6 +74,11 @@ export default {
       /deep/ .el-tabs__header {
         padding: 20px;
         float: none;
+        .el-tabs__item {
+          i {
+            font-size: 20px;
+          }
+        }
       }
     }
   }

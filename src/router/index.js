@@ -15,6 +15,7 @@ import Es6 from '@/views/es6/index'
 import Css from '@/views/css/index'
 import AntvG6 from '@/views/antv-g6/index'
 import Profit from '@/views/profit/index'
+import Svg from '@/views/svg/index'
 
 Vue.use(Router)
 
@@ -89,6 +90,10 @@ export default new Router({
           path: 'profit',
           name: 'profit',
           component: Profit
+        }, {
+          path: 'svg',
+          name: 'svg',
+          component: Svg
         }
       ]
     }
