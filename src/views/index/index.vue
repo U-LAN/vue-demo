@@ -2,9 +2,7 @@
   <el-container id="main">
     <stars></stars>
     <el-header>
-      <h1>
-        <a href="https://cn.vuejs.org/">VUE</a> DEMO COLLECTION
-      </h1>
+      <h1><a href="https://cn.vuejs.org/">VUE</a> DEMO COLLECTION</h1>
     </el-header>
     <el-container class="all">
       <el-aside width="200px" height="100%">
@@ -16,8 +14,8 @@
             v-bind:key="index"
           >
             <span slot="label">
-              {{item.cname}}
-              <i :class="['iconfont',item.icon||'']"></i>
+              {{ item.cname }}
+              <i :class="['iconfont', item.icon || '']"></i>
             </span>
           </el-tab-pane>
         </el-tabs>
@@ -32,25 +30,25 @@
 </template>
 
 <script>
-import { navlist } from '../../assest/dateJs/index/index'
-import Stars from './components/stars'
+import { navlist } from "../../assest/dateJs/index/index";
+import Stars from "./components/stars";
 export default {
-  name: 'Index',
+  name: "Index",
   components: {
-    Stars
+    Stars,
   },
-  data () {
+  data() {
     return {
       activeName: this.$route.name,
-      navlist: navlist
-    }
+      navlist: navlist,
+    };
   },
   methods: {
-    tabClick (tab) {
-      this.$router.push(tab.name)
-    }
-  }
-}
+    tabClick(tab) {
+      this.$router.push(tab.name);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -83,7 +81,7 @@ export default {
     }
   }
   .el-main {
-    height: 870px;
+    height: 860px;
     overflow: auto;
   }
   .all {

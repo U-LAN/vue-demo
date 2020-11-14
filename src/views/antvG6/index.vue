@@ -1,5 +1,5 @@
 <template>
-  <div id="mountNode" style="width:100%;"></div>
+  <div id="mountNode" style="width: 100%"></div>
 </template>
 <script>
 import G6 from '@antv/g6'
@@ -69,7 +69,7 @@ export default {
       // this.convertBinaryTree(this.addTree(binaryTreeData1, binaryTreeData2))
       this.convertBinaryTree(binaryTreeData2)
     )
-    console.log(this.searchLeaves(binaryTreeData2, 4))
+    console.log(this.searchLeavesOptimize(binaryTreeData2, 9))
   },
   methods: {
     initGraph (data) {
@@ -228,6 +228,18 @@ export default {
       if (found) return found
       pathList.pop()
       return found
+    },
+    // 优化 searchLeaves
+    searchLeavesOptimize (tree, key) {
+      if (!tree) return null
+
+      if (tree.id === key) return [tree.id]
+
+      let found = this.searchLeavesOptimize(tree.left, key)
+      if (found !== null) return [tree.id, ...found]
+      found = this.searchLeavesOptimize(tree.right, key)
+      if (found !== null) return [tree.id, ...found]
+      return null
     }
   }
 }

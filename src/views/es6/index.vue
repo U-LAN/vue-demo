@@ -9,7 +9,7 @@
     <el-card
       @dblclick.native="dbClick(components.TailRecursion)"
       :class="{
-        'full-screen-item': fullScreenItem === components.TailRecursion
+        'full-screen-item': fullScreenItem === components.TailRecursion,
       }"
     >
       <tail-recursion></tail-recursion>
@@ -17,7 +17,7 @@
     <el-card
       @dblclick.native="dbClick(components.ProxyReflect)"
       :class="{
-        'full-screen-item': fullScreenItem === components.ProxyReflect
+        'full-screen-item': fullScreenItem === components.ProxyReflect,
       }"
     >
       <proxy-reflect></proxy-reflect>
@@ -28,6 +28,12 @@
     >
       <ergodic></ergodic>
     </el-card>
+    <el-card
+      @dblclick.native="dbClick(components.Throttle)"
+      :class="{ 'full-screen-item': fullScreenItem === components.Throttle }"
+    >
+      <throttle></throttle>
+    </el-card>
   </div>
 </template>
 <script>
@@ -35,12 +41,14 @@ import SymbolType from "./components/symbol";
 import TailRecursion from "./components/tail-recursion";
 import ProxyReflect from "./components/proxy-reflect";
 import Ergodic from "./components/ergodic";
+import Throttle from "./components/throttle";
 export default {
   components: {
     SymbolType,
     TailRecursion,
     ProxyReflect,
-    Ergodic
+    Ergodic,
+    Throttle,
   },
   data() {
     return {
@@ -48,11 +56,17 @@ export default {
         SymbolType: "SymbolType",
         TailRecursion: "TailRecursion",
         ProxyReflect: "ProxyReflect",
-        Ergodic: "Ergodic"
+        Ergodic: "Ergodic",
+        Throttle:'Throttle'
       },
       fullScreen: false,
-      fullScreenItem: ""
+      fullScreenItem: "",
     };
+  },
+  mounted() {
+    let A = [84, 53];
+    // console.log(this.playGames(A))
+    console.log(this.smallestDivisor([1, 2, 5, 9], 6));
   },
   methods: {
     dbClick(item) {
@@ -63,8 +77,45 @@ export default {
         this.fullScreen = true;
         this.fullScreenItem = item;
       }
-    }
-  }
+    },
+    // lincode 玩游戏1671 题
+    playGames(A) {
+      A = A.sort((a, b) => a - b);
+      let len = A.length;
+      if (A.length <= 2) {
+        return A.reduce((count, item) => {
+          return count + item;
+        }, 0);
+      }
+      let max = A[len - 1];
+      let sum = 0;
+      A.forEach((_) => {
+        sum += _ - max;
+      });
+
+      if (sum + max > 0) return max;
+      else return Math.ceil(-(sum + max) / (len - 1)) + max;
+    },
+    // lincode 1816. 使结果不超过阈值的最小除数
+    smallestDivisor(A, threshold) {
+      let start = 1;
+      let end = A.sort((a, b) => a - b)[A.length - 1];
+
+      function isValid(guessDivisor) {
+        let res = A.reduce((sum, i) => sum + Math.ceil(i / guessDivisor), 0);
+        if (res <= threshold) return true;
+        return false;
+      }
+
+      while (start + 1 < end) {
+        let mid = (start + end) / 2;
+        if (isValid(mid)) end = mid;
+        else start = mid;
+      }
+
+      return isValid(start) ? start : end;
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
