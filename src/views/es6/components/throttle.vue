@@ -14,7 +14,7 @@
         text-align: center;
         color: #fff;
         background-color: #ccc;
-        font-size: 80px; 
+        font-size: 80px;
         margin-top: 24px;
       "
     >
@@ -135,134 +135,134 @@
 </template>
 <script>
 // 非立即执行 防抖
-function debounceUidy(fn, wait) {
-  let timeout;
+function debounceUidy (fn, wait) {
+  let timeout
   return function () {
-    let context = this;
-    let args = arguments;
+    let context = this
+    let args = arguments
 
-    if (timeout) clearTimeout(timeout);
+    if (timeout) clearTimeout(timeout)
 
     timeout = setTimeout(() => {
-      fn.apply(context, args);
-    }, wait);
-  };
+      fn.apply(context, args)
+    }, wait)
+  }
 }
 // 立即执行 防抖
-function debounceIdy(fn, wait) {
-  let timeout;
+function debounceIdy (fn, wait) {
+  let timeout
   return function () {
-    let context = this;
-    let args = arguments;
+    let context = this
+    let args = arguments
 
-    if (timeout) clearTimeout(timeout);
-    else fn.apply(context, args);
+    if (timeout) clearTimeout(timeout)
+    else fn.apply(context, args)
 
     timeout = setTimeout(() => {
-      timeout = null;
-    }, wait);
-  };
+      timeout = null
+    }, wait)
+  }
 }
 // 时间戳 节流
-function throttleTim(fn, wait) {
-  let previous = 0;
+function throttleTim (fn, wait) {
+  let previous = 0
   return function () {
-    let context = this;
-    let args = arguments;
+    let context = this
+    let args = arguments
 
-    let now = Date.now();
+    let now = Date.now()
 
     if (now - previous > wait) {
-      fn.apply(context, args);
-      previous = now;
+      fn.apply(context, args)
+      previous = now
     }
-  };
+  }
 }
 // 定时器 节流
-function throttleTmot(fn, wait) {
-  let timeout;
+function throttleTmot (fn, wait) {
+  let timeout
   return function () {
-    let context = this;
-    let args = arguments;
+    let context = this
+    let args = arguments
 
     if (!timeout) {
       timeout = setTimeout(() => {
-        fn.apply(context, args);
-        timeout = null;
-      }, wait);
+        fn.apply(context, args)
+        timeout = null
+      }, wait)
     }
-  };
+  }
 }
-function throttleTAT(fn, wait) {
-  let previous = 0;
-  let timeout;
+function throttleTAT (fn, wait) {
+  let previous = 0
+  let timeout
   return function () {
-    let context = this;
-    let args = arguments;
+    let context = this
+    let args = arguments
 
-    let now = Date.now();
+    let now = Date.now()
 
-    let remaining = wait - (now - previous); // 剩余的还需要等待的时间
+    let remaining = wait - (now - previous) // 剩余的还需要等待的时间
 
     if (remaining <= 0) {
-      fn.apply(context, args);
-      previous = now;
+      fn.apply(context, args)
+      previous = now
     } else {
-      if (timeout) clearTimeout(timeout);
+      if (timeout) clearTimeout(timeout)
       timeout = setTimeout(() => {
-        fn.apply(context, args);
-        previous = Date.now();
-        timeout = null;
-      }, remaining);
+        fn.apply(context, args)
+        previous = Date.now()
+        timeout = null
+      }, remaining)
     }
-  };
+  }
 }
 const AllFn = {
   debounceIdy,
   debounceUidy,
   throttleTim,
   throttleTmot,
-  throttleTAT,
-};
+  throttleTAT
+}
 const types = {
-  debounceIdy: "防抖（立即）",
-  debounceUidy: "防抖（非立即）",
-  throttleTim: "节流（时间戳）",
-  throttleTmot: "节流（定时器）",
-  throttleTAT: "节流（时间戳定时器）",
-};
+  debounceIdy: '防抖（立即）',
+  debounceUidy: '防抖（非立即）',
+  throttleTim: '节流（时间戳）',
+  throttleTmot: '节流（定时器）',
+  throttleTAT: '节流（时间戳定时器）'
+}
 export default {
-  data() {
+  data () {
     return {
       times: 0,
       types,
-      type: "debounceIdy",
-      oldEvent: null,
-    };
+      type: 'debounceIdy',
+      oldEvent: null
+    }
   },
   watch: {
     type: {
       immediate: true,
-      handler(nval, oval) {
-        this.times = 0;
-        this.bindEvent(oval, nval);
-      },
-    },
+      handler (nval, oval) {
+        this.times = 0
+        this.bindEvent(oval, nval)
+      }
+    }
   },
   methods: {
     count: function () {
-      this.times = this.times + 1;
+      this.times = this.times + 1
     },
-    bindEvent(oval, nval) {
+    bindEvent (oval, nval) {
       this.$nextTick(() => {
-        let dom = document.querySelector("#content");
-        oval && dom.removeEventListener("mousemove", this.oldEvent);
-        this.oldEvent = AllFn[nval](this.count, 1000);
-        dom.addEventListener("mousemove", this.oldEvent);
-      });
-    },
-  },
-};
+        let dom = document.querySelector('#content')
+        oval && dom.removeEventListener('mousemove', this.oldEvent)
+        this.oldEvent = AllFn[nval](this.count, 1000)
+        dom.addEventListener('mousemove', this.oldEvent)
+      })
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .title {
